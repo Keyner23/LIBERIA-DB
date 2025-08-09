@@ -28,20 +28,20 @@ app.get("/libros", (req, resp) => {
 
 // METODO POST CON EXPRESS
 
-app.post("/registro", (req, res) => {
-    const { fecha_prestamo, fecha_devolucion, id_usuario, id_libro, estado } = req.body;
+app.post("/crearusuario", (req, res) => {
+    const { nombre, identificacion, correo, telefono} = req.body;
 
     const sql = `
-        INSERT INTO prestamos (fecha_prestamo, fecha_devolucion, id_usuario, id_libro, estado) 
-        VALUES (?, ?, ?, ?, ?)
+        INSERT INTO usuarios (nombre,identificacion,correo, telefono) 
+        VALUES (?, ?, ?, ?)
     `;
 
-    conexion.query(sql, [fecha_prestamo, fecha_devolucion, id_usuario, id_libro, estado], (err, result) => {
+    conexion.query(sql, [nombre, identificacion, correo, telefono], (err, result) => {
         if (err) {
             console.error("Error al insertar:", err.message);
             return res.status(500).json({ error: "Error al insertar datos" });
         }
-        res.status(201).json({ mensaje: "Se regitro correctamente el prestamo", id: result.insertId });
+        res.status(201).json({ mensaje: "Se regitro correctamente el usuario", id: result.insertId });
     });
 });
 

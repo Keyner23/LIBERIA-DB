@@ -5,8 +5,8 @@ import { cargarUsuariosDb } from "./cargar_usuarios.js";
     try {
         console.log('🚀 Iniciando seeders...');
 
-        // await cargarUsuariosDb()
-        // await cargarLibrosDb()
+        await cargarUsuariosDb()
+        await cargarLibrosDb()
 
         console.log('✅ Todos los seeders ejecutados correctamente.');
     } catch (error) {
