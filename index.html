@@ -9,56 +9,98 @@
     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <title>KABO LIBRERIA</title>
 </head>
-<header>
-  <h1>INGRESAR UN NUEVO PRESTAMO..</h1>
+<header class="container">
+  <h1>USUARIOSSSSSS.......</h1>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./libros.html">LIBROS</a>
+          </li>
+      </div>
+    </div>
+  </nav>
   <br>
-  <div class="row">
-    <div class="col">
-      <input type="text" id="fecha_prestamo" class="form-control" placeholder="FECHA PRESTAMO" aria-label="First name">
-    </div>
-    <div class="col">
-      <input type="text" id="devolucion" class="form-control" placeholder="FECHA DE DEVOLUCION" aria-label="Last name">
-    </div>
-    <div class="col">
-      <input type="text" id="usuario" class="form-control" placeholder="	ID-USUARIO" aria-label="Last name">
-    </div>
-    <div class="col">
-      <input type="text" id="libro" class="form-control" placeholder="	ID-LIBRO" aria-label="Last name">
-    </div>
-    <div class="col">
-      <input type="text" id="estado" class="form-control" placeholder="	ESTADO" aria-label="Last name">
-    </div>
-  </div>
+  <br>
+  <button id="traer" class="btn btn-outline-warning btn-lg ">TRAER TODOS LOS USUARIOS</button>
+  <button id="crear-usuario" type="button" class="btn btn-outline-primary btn-lg " data-bs-toggle="modal"
+    data-bs-target="#crearusuario">
+    CREAR USUARIO
+  </button>
+
 </header>
 <br>
 <br>
+
 <body>
   <main>
-    <button id="crear" class="btn btn-outline-primary btn-lg">INGRESAR PRESTAMO</button>
-    <button id="traer" class="btn btn-outline-warning btn-lg">TRAER TODOS LOS PRESTAMOS</button>
-    <br>
-    <br>
-    <div>
+    <div class="container">
       <table class="table">
         <thead>
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">FECHA PRESTAMO</th>
-            <th scope="col">FECHA DE DEVOLUCION</th>
-            <th scope="col">ID-USUARIO</th>
-            <th scope="col">ID-LIBRO</th>
-            <th scope="col">ESTADO</th>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">IDENTIFICACION</th>
+            <th scope="col">CORREO</th>
+            <th scope="col">TELEFONO</th>
           </tr>
         </thead>
         <tbody id="prestamos">
         </tbody>
       </table>
     </div>
+
+    <div class="modal fade" id="crearusuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Crear usuario</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3">
+              <div class="col-md-4">
+                <label for="validationDefault01" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="validationDefault01"  required>
+              </div>
+              <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Identificacion</label>
+                <input type="text" class="form-control" id="validationDefault02" required>
+              </div>
+              <div class="col-md-4">
+                <label for="validationDefaultUsername" class="form-label">Correo</label>
+                <div class="input-group">
+                  <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                  <input type="text" class="form-control" id="validationDefaultUsername"
+                    aria-describedby="inputGroupPrepend2" required>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Telefono</label>
+                <input type="text" class="form-control" id="validationDefault02" required>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
     crossorigin="anonymous"></script>
   <script type="module" src="./app/main.js"></script>
+
 </body>
 
 </html>

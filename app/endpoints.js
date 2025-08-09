@@ -12,8 +12,15 @@ app.use(express.json());
 
 //METODO GET CON EXPRESS
 
-app.get("/prestamo", (req, resp) => {
-    conexion.query("select * from prestamos", (error, result) => {
+app.get("/usuarios", (req, resp) => {
+    conexion.query("select * from usuarios", (error, result) => {
+        if (error) throw error
+        resp.json(result)
+    })
+})
+
+app.get("/libros", (req, resp) => {
+    conexion.query("select * from libros", (error, result) => {
         if (error) throw error
         resp.json(result)
     })
